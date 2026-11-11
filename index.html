@@ -1,53 +1,120 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prénom Nom – Ingénieur en [ta spécialité]</title>
-  <meta name="description" content="Portfolio de Prénom Nom, ingénieur diplômé de [école]. Parcours et projets.">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+  --abysse: #0a2c3d;
+  --abysse-2: #123e54;
+  --ecume: #f2f6f7;
+  --encre: #17262e;
+  --discret: #5a6d76;
+  --nudibranche: #e63e5c;
+  --trait: #d3dde1;
+  --fond: var(--ecume);
+  --texte: var(--encre);
+}
 
-  <header>
-    <h1>Prénom Nom</h1>
-    <p>Ingénieur en [spécialité] – diplômé de [école], 2026</p>
-    <a class="bouton" href="cv.pdf" download>Télécharger mon CV</a>
-  </header>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #0d1a21;
+    --texte: #e4edf0;
+    --discret: #93a7b0;
+    --trait: #24363f;
+  }
+}
 
-  <main>
-    <section id="parcours">
-      <h2>Parcours</h2>
-      <p>2023–2026 : Diplôme d'ingénieur, [école]<br>
-         2021–2023 : [Classe prépa / DUT / autre]</p>
-    </section>
+* { box-sizing: border-box; }
 
-    <section id="projets">
-      <h2>Projets</h2>
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-      <article>
-        <h3>Nom du projet</h3>
-        <img src="images/projet1.webp" alt="Description de l'image">
-        <p>Contexte, ton rôle, outils utilisés, résultats.</p>
-      </article>
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
 
-      <article>
-        <h3>Projet avec vidéo</h3>
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO"
-                  title="Démo du projet" allowfullscreen></iframe>
-        </div>
-        <p>Description du projet.</p>
-      </article>
-    </section>
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p><a href="mailto:ton@email.fr">ton@email.fr</a> ·
-         <a href="https://www.linkedin.com/in/ton-profil">LinkedIn</a> ·
-         <a href="https://github.com/ton-pseudo">GitHub</a></p>
-    </section>
-  </main>
+h1, h2, h3, nav, .bouton, .lien-clair, .dates, dt {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
 
-</body>
-</html>
+a { color: inherit; text-decoration-color: var(--nudibranche); text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: 3px; border-radius: 2px; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--abysse) 0%, var(--abysse-2) 100%);
+  color: #eaf3f6;
+  padding: 5rem 0 4rem;
+  border-bottom: 6px solid var(--nudibranche);
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 9vw, 5rem);
+  line-height: 1;
+  letter-spacing: -.03em;
+  margin: 0 0 .6rem;
+}
+.titre {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 1.5rem;
+  color: #9fd0e0;
+}
+.accroche { max-width: 38rem; margin: 0 0 2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; margin: 0; }
+
+.bouton {
+  display: inline-block;
+  padding: .75rem 1.4rem;
+  background: var(--nudibranche);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.bouton:hover { background: #cf2f4d; }
+.lien-clair { color: #eaf3f6; font-weight: 500; }
+
+/* Navigation */
+nav {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  padding-top: 1.25rem; padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--trait);
+  font-weight: 500;
+}
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; text-decoration-color: var(--nudibranche); }
+
+/* Sections */
+section { padding: 3rem 0 1rem; }
+h2 { font-size: 2rem; letter-spacing: -.02em; margin: 0 0 1.5rem; }
+h3 { font-size: 1.3rem; margin: 0 0 .25rem; }
+
+article { margin-bottom: 3rem; }
+.meta { margin: 0 0 1rem; color: var(--discret); font-style: italic; font-size: 1rem; }
+.outils { font-size: .95rem; color: var(--discret); margin: .5rem 0 0; }
+
+figure { margin: 0 0 1rem; }
+figure img { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+.video { position: relative; aspect-ratio: 16 / 9; margin-top: 1rem; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
+
+/* Parcours */
+.chrono { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--nudibranche); }
+.chrono li { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding: 0 0 1.75rem 1.25rem; }
+.chrono p { margin: 0; }
+.dates { font-weight: 700; color: var(--discret); }
+
+/* Compétences */
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 1.25rem; }
+dd { margin: .15rem 0 0; }
+
+/* Pied de page */
+footer { padding-top: 2rem; padding-bottom: 3rem; color: var(--discret); font-size: .95rem; }
+
+@media (max-width: 34rem) {
+  .chrono li { grid-template-columns: 1fr; gap: .15rem; }
+}
