@@ -4,124 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aurèle Planchard – Ingénieur en robotique autonome</title>
-  <meta name="description" content="Portfolio d'Aurèle Planchard, ingénieur ENSTA Bretagne en robotique autonome : robotique sous-marine, bio-inspirée, vision 3D et manipulation. Recherche une thèse en robotique.">
+  <meta name="description" content="Aurèle Planchard, ingénieur ENSTA Bretagne en robotique autonome. Recherche une thèse en robotique en France.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="wrap" aria-label="Navigation principale">
+    <a class="marque" href="index.html">Aurèle Planchard</a>
+    <a href="index.html" aria-current="page">Accueil</a>
+    <a href="projets.html">Projets</a>
+    <a href="parcours.html">Parcours et CV</a>
+  </nav>
 
   <header class="hero">
-    <div class="wrap">
-      <h1>Aurèle Planchard</h1>
-      <p class="titre">Ingénieur en robotique autonome</p>
-      <p class="accroche">Diplômé de l'ENSTA Bretagne en 2026. J'ai travaillé sur des robots sous-marins, aériens et terrestres, sur la robotique souple et sur le contrôle de bras manipulateurs. Je cherche une thèse en robotique en France.</p>
-      <p class="actions">
-        <a class="bouton" href="cv.pdf" download>Télécharger mon CV</a>
-        <a class="lien-clair" href="#contact">Me contacter</a>
-      </p>
+    <div class="wrap hero-grille">
+      <div>
+        <h1>Aurèle Planchard</h1>
+        <p class="titre">Ingénieur en robotique autonome</p>
+        <p class="accroche">Diplômé de l'ENSTA Bretagne en 2026.</p>
+      </div>
+      <img class="portrait" src="images/photo.webp" alt="Portrait d'Aurèle Planchard" width="320" height="320" onerror="this.hidden=true">
     </div>
   </header>
 
-  <nav class="wrap" aria-label="Sections">
-    <a href="#projets">Projets</a>
-    <a href="#parcours">Parcours</a>
-    <a href="#competences">Compétences</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <main class="wrap">
-
-    <section id="projets">
-      <h2>Projets</h2>
-
-      <article>
-        <h3>Nageur robotique inspiré du nudibranche</h3>
-        <p class="meta">Stage de fin d'études · ENSTA – CNRS Lab-STICC, Brest / Grenoble · mars – août 2026</p>
-        <figure><img src="images/nudibranche.webp" alt="Prototype du nageur robotique à nageoire circulaire flexible" loading="lazy" onerror="this.parentElement.hidden=true"></figure>
-        <p>Conception mécatronique et modélisation dynamique d'un nageur bio-inspiré du nudibranche Spanish Dancer. J'ai développé le mécanisme de propulsion à nageoire circulaire flexible et l'électronique de contrôle sur ESP32. J'ai aussi défini les protocoles d'essais en bassin et mesuré les performances de propulsion par suivi vidéo.</p>
-        <p class="outils">ESP32 · modélisation dynamique · tracking vidéo · robotique souple</p>
-      </article>
-
-      <article>
-        <h3>Scouts : une flottille de robots sous-marins</h3>
-        <p class="meta">Projet de 3<sup>e</sup> année · ENSTA Bretagne, lac de Guerlédan · 2025 – 2026</p>
-        <figure><img src="images/scouts.webp" alt="Robots sous-marins du projet Scouts sur le lac de Guerlédan" loading="lazy" onerror="this.parentElement.hidden=true"></figure>
-        <p>Étude et implémentation d'algorithmes d'observation et de commande par intervalles pour des robots sous-marins en environnement incertain. J'ai intégré le système de communication qui permet aux robots de coopérer en essaim. Les algorithmes ont été validés lors d'essais en conditions réelles sur le lac de Guerlédan.</p>
-        <p class="outils">Méthodes ensemblistes · communication multi-robots · essais in situ</p>
-        <!-- Pour ajouter une vidéo, décommente et remplace ID_DE_LA_VIDEO :
-        <div class="video"><iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" title="Essais Scouts à Guerlédan" allowfullscreen loading="lazy"></iframe></div>
-        -->
-      </article>
-
-      <article>
-        <h3>Drone quadricoptère aéro-sous-marin</h3>
-        <p class="meta">Projet de 2<sup>e</sup> année · Brest · 2024 – 2025</p>
-        <figure><img src="images/drone.webp" alt="Drone hybride capable de voler et de plonger" loading="lazy" onerror="this.parentElement.hidden=true"></figure>
-        <p>Conception CAO, fabrication et étanchéification d'un drone hybride capable de voler et de plonger. L'architecture embarquée repose sur un contrôleur Pixhawk couplé à une Raspberry Pi sous Linux. J'ai développé la logique de contrôle et d'autonomie pour des missions de surveillance d'infrastructures côtières.</p>
-        <p class="outils">Pixhawk · Raspberry Pi · CAO · étanchéité</p>
-      </article>
-
-      <article>
-        <h3>Vision 3D et manipulation robotique</h3>
-        <p class="meta">Stage de recherche · Université d'Oldenburg, Allemagne · mai – sept. 2025</p>
-        <figure><img src="images/oldenburg.webp" alt="Bras manipulateur saisissant un objet détecté en 3D" loading="lazy" onerror="this.parentElement.hidden=true"></figure>
-        <p>Développement d'une chaîne de vision 3D pour détecter et localiser des objets dans l'espace, puis implémentation des lois de commande d'un bras manipulateur polyarticulé sous Linux, Python et ROS 2. J'ai mené des expériences de préhension et de manipulation d'objets en environnement dynamique.</p>
-        <p class="outils">ROS 2 · Python · vision 3D · bras manipulateur</p>
-      </article>
+    <section>
+      <h2>Qui je suis</h2>
+      <p>Je suis ingénieur en robotique autonome et systèmes embarqués, diplômé de l'ENSTA Bretagne à Brest. Pendant mes études, j'ai travaillé sur des robots sous-marins, aériens et terrestres, sur la robotique souple et sur le contrôle de bras manipulateurs.</p>
+      <p>Mon projet de fin d'études, mené au Lab-STICC (CNRS), portait sur un nageur robotique inspiré du nudibranche. J'ai aussi fait un stage de recherche en vision 3D et manipulation à l'Université d'Oldenburg, en Allemagne.</p>
     </section>
 
-    <section id="parcours">
-      <h2>Parcours</h2>
-      <ol class="chrono">
-        <li>
-          <span class="dates">2023 – 2026</span>
-          <div>
-            <h3>Diplôme d'ingénieur, robotique autonome</h3>
-            <p>ENSTA Bretagne, Brest. Modélisation, conception, programmation, vision par ordinateur, électronique embarquée.</p>
-          </div>
-        </li>
-        <li>
-          <span class="dates">2021 – 2023</span>
-          <div>
-            <h3>Classes préparatoires PCSI / PSI</h3>
-            <p>Lycée Chateaubriand, Rennes. Mathématiques, physique et sciences de l'ingénieur.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section id="competences">
-      <h2>Compétences</h2>
-      <dl>
-        <dt>Robotique et contrôle</dt>
-        <dd>Contrôle de robots mobiles, manipulation robotique, cinématique, robotique sous-marine, vision 3D</dd>
-        <dt>Langages et frameworks</dt>
-        <dd>C++, Python, ROS 2, MATLAB, OpenCV</dd>
-        <dt>Systèmes et électronique</dt>
-        <dd>Linux (Ubuntu), Git, Docker, ESP32, Raspberry Pi, Pixhawk</dd>
-        <dt>Simulation et mécanique</dt>
-        <dd>CoppeliaSim, Unity, Catia, Onshape, prototypage</dd>
-        <dt>Langues</dt>
-        <dd>Français (langue maternelle), anglais (C1), allemand (notions)</dd>
-      </dl>
+    <section>
+      <h2>Ce que je cherche</h2>
+      <p>Je cherche une thèse en robotique en France, de préférence sur des robots qui doivent agir de façon autonome dans des environnements incertains, comme le milieu marin.</p>
+      <p><a class="bouton" href="projets.html">Voir mes projets</a></p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Je cherche une thèse en robotique en France. Écris-moi, ou retrouve-moi sur LinkedIn.</p>
       <p>
         <a href="mailto:aurele.planchard@ensta.fr">aurele.planchard@ensta.fr</a><br>
         <a href="https://www.linkedin.com/in/TON-IDENTIFIANT-LINKEDIN">LinkedIn</a>
       </p>
     </section>
-
   </main>
 
   <footer class="wrap">
     <p>© 2026 Aurèle Planchard · Brest, France</p>
   </footer>
-
 </body>
 </html>
