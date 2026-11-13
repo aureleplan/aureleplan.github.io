@@ -6,6 +6,7 @@
   --discret: #5a6d76;
   --nudibranche: #e63e5c;
   --trait: #d3dde1;
+  --accent-texte: #0f6a8a;
   --fond: var(--ecume);
   --texte: var(--encre);
 }
@@ -16,6 +17,7 @@
     --texte: #e4edf0;
     --discret: #93a7b0;
     --trait: #24363f;
+    --accent-texte: #9fd0e0;
   }
 }
 
@@ -55,10 +57,7 @@ a:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: 3px; bo
 .titre-page { font-size: 2.6rem; letter-spacing: -.03em; line-height: 1.1; margin: 2.5rem 0 1.5rem; }
 
 .hero {
-  background: linear-gradient(180deg, var(--abysse) 0%, var(--abysse-2) 100%);
-  color: #eaf3f6;
-  padding: 4rem 0 3.5rem;
-  border-bottom: 6px solid var(--nudibranche);
+  padding: 3rem 0 2.5rem;
 }
 .hero + main section:first-child { padding-top: 2rem; }
 .hero h1 {
@@ -71,7 +70,7 @@ a:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: 3px; bo
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
   font-size: 1.4rem;
   margin: 0 0 .2rem;
-  color: #9fd0e0;
+  color: var(--accent-texte);
 }
 .accroche { max-width: 38rem; margin: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; margin: 0; }
@@ -86,19 +85,20 @@ a:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: 3px; bo
   border-radius: 4px;
 }
 .bouton:hover { background: #cf2f4d; }
-.lien-clair { color: #eaf3f6; font-weight: 500; }
+.lien-clair { color: inherit; font-weight: 500; }
 
 .contacts { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
 .contacts li { display: flex; align-items: center; gap: .5rem; }
-.contacts a { color: #eaf3f6; }
-.icone { flex: none; color: #9fd0e0; }
+.contacts a { color: inherit; }
+.icone { flex: none; color: var(--accent-texte); }
 
 /* Navigation */
 nav {
-  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: baseline;
-  padding-top: 1.25rem; padding-bottom: 1.25rem;
+  display: flex; flex-wrap: wrap; gap: .75rem 2rem; align-items: baseline;
+  padding-top: 2rem; padding-bottom: 2rem;
   border-bottom: 1px solid var(--trait);
   font-weight: 500;
+  font-size: 1.1rem;
 }
 nav a { text-decoration: none; }
 nav a:hover { text-decoration: underline; text-decoration-color: var(--nudibranche); }
