@@ -137,3 +137,64 @@ footer { padding-top: 2rem; padding-bottom: 3rem; color: var(--discret); font-si
 @media (max-width: 34rem) {
   .chrono li { grid-template-columns: 1fr; gap: .15rem; }
 }
+
+/* Carrousel */
+.carrousel { margin-top: 1.5rem; }
+.carrousel[hidden] { display: none; }
+.cadre { position: relative; }
+.pistes {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 6px;
+}
+.pistes::-webkit-scrollbar { display: none; }
+.pistes:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: 3px; }
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  aspect-ratio: 16 / 9;
+  background: var(--trait);
+  position: relative;
+}
+.slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.slide iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+.lecteur { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; position: relative; }
+.lecteur img { object-fit: cover; }
+.play {
+  position: absolute; top: 50%; left: 50%;
+  width: 4.5rem; height: 4.5rem; transform: translate(-50%, -50%);
+  border-radius: 50%; background: rgba(10, 20, 26, .75);
+}
+.play::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid; border-width: .85rem 0 .85rem 1.4rem;
+  border-color: transparent transparent transparent #fff;
+}
+.lecteur:hover .play { background: var(--nudibranche); }
+.lecteur:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: -3px; }
+
+.prec, .suiv {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 2.75rem; height: 2.75rem; padding: 0 0 .2rem;
+  border: 0; border-radius: 50%;
+  background: rgba(10, 20, 26, .7); color: #fff;
+  font-size: 1.8rem; line-height: 1; cursor: pointer;
+}
+.prec { left: .75rem; }
+.suiv { right: .75rem; }
+.prec:hover:not(:disabled), .suiv:hover:not(:disabled) { background: var(--nudibranche); }
+.prec:disabled, .suiv:disabled { opacity: .3; cursor: default; }
+.prec:focus-visible, .suiv:focus-visible, .point:focus-visible { outline: 3px solid var(--nudibranche); outline-offset: 2px; }
+
+.points { display: flex; justify-content: center; margin-top: .5rem; }
+.points[hidden], .prec[hidden], .suiv[hidden] { display: none; }
+.point {
+  width: 1.5rem; height: 1.5rem; padding: .45rem;
+  border: 0; border-radius: 50%; cursor: pointer;
+  background: var(--trait); background-clip: content-box;
+}
+.point[aria-current="true"] { background: var(--nudibranche); background-clip: content-box; }
